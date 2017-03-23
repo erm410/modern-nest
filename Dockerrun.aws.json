@@ -1,0 +1,18 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ],
+  "Volumes": [
+    {
+      "HostDirectory": "/mnt/wp/html",
+      "ContainerDirectory": "/var/www/html"
+    },
+		{
+			"HostDirectory": "/etc/passwd",
+			"ContainerDirectory": "/etc/passwd"
+		}
+  ]
+}
