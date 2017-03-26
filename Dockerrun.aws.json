@@ -6,9 +6,29 @@
     }
   ],
   "Volumes": [
-    {
-      "HostDirectory": "/mnt/wp/html",
+		{
+      "HostDirectory": "/var/app/current/wp",
       "ContainerDirectory": "/var/www/html"
+    },
+    {
+      "HostDirectory": "/mnt/wp/html/.htaccess",
+      "ContainerDirectory": "/var/www/html/.htaccess"
+    },
+		{
+      "HostDirectory": "/mnt/wp/html/wp-content",
+      "ContainerDirectory": "/var/www/html/wp-content"
+    },
+		{
+      "HostDirectory": "/var/app/current/fora",
+      "ContainerDirectory": "/var/www/html/wp-content/themes/fora"
+    },
+		{
+      "HostDirectory": "/var/app/current/loffle",
+      "ContainerDirectory": "/var/www/html/wp-content/themes/loffle"
+    },
+		{
+      "HostDirectory": "/var/app/current/newrelic.ini",
+      "ContainerDirectory": "/usr/local/etc/php/conf.d/newrelic.ini"
     },
 		{
 			"HostDirectory": "/etc/passwd",

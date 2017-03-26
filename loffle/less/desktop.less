@@ -1,0 +1,242 @@
+\
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	position: absolute;
+	.full-width;
+
+	&.admin-bar {
+		.main-navigation {
+			top: 32px;
+		}
+
+		.search-form {
+			top: 72px;
+		}
+	}
+}
+
+.main-navigation {
+	.default-background;
+	.between-gutters;
+	position: fixed;
+	top: 15px;
+	width: auto;
+	margin-top: 0;
+	border-bottom-color: @accent;
+	border-bottom-width: 3px;
+	.on-top;
+
+	ul {
+		margin: 0 15px;
+	}
+
+	a {
+		padding: 0.5em 1.5em;
+	}
+
+	.menu-menu-1-container {
+		display: inline-block;
+		width: 90%;
+	}
+
+	.toggle-button() {
+		.default-background;
+		color: #666666;
+		width: 8%;
+		transition: none;
+		-webkit-transition: none;
+
+		&:focus, &:hover {
+			outline: none;
+			border: none;
+		}
+
+		&.active {
+			border-color: @accent;
+			border-width: medium;
+			border-style: solid;
+		}
+	}
+
+	.email-toggle {
+		.toggle-button;
+		display: none;
+	}
+
+	.search-toggle {
+		.toggle-button;
+	}
+}
+
+.signup-dropdown {
+	position: fixed;
+	z-index: 9999;
+	top: 55px;
+	right: 15px;
+	display: none;
+	width: 300px;
+	max-width: 80vw;
+	.default-background;
+	padding: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: .accent;
+
+	&.active {
+		display: block;
+	}
+}
+
+.search-form {
+	position: fixed;
+	z-index: 9999;
+	top: 55px;
+	right: 15px;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+	.search-submit {
+		height: 0;
+		width: 0;
+		border: none;
+		padding: 0;
+	}
+
+	label:before {
+		font-family: 'FontAwesome';
+		content: "\f002";
+		position: relative;
+		left: 30px;
+	}
+
+	.search-field {
+		width: 300px;
+		text-indent: 30px;
+	}
+}
+
+#page.site {
+	position: absolute;
+	.between-gutters;
+	top: 51px;
+	bottom: 0px;
+}
+
+.site-title, p.site-title {
+	.default-text-color;
+	font-family: 'Stylish';
+	font-size: 3.5em;
+	font-weight: normal;
+	margin: auto;
+}
+
+header.site-header {
+	.main-header {
+		top: 51px;
+	}
+}
+
+.header_wrapper {
+	padding-top: 1em;
+}
+
+.header_top {
+	display: table-header-group;
+}
+
+.site-search, .site-social {
+	padding: 0 0.5em;
+	text-align: left;
+	display: inline-block;
+	width: 30%;
+}
+
+.site-search {
+	margin-left: 40%;
+}
+
+.site-social a {
+	margin: 2px;
+	text-align: center;
+}
+
+.site-social.below {
+	display: none;
+}
+
+.site-branding {
+	display: block;
+	width: 100%;
+	border: none;
+	margin: auto;
+}
+
+.site-description {
+	font-family: 'Champagne';
+	font-size: 1.25em;
+	.accent-text;
+}
+
+.menu-toggle {
+	text-align: left;
+	.accent-background;
+
+	&:hover, &:active, &:focus {
+		.accent-background;
+	}
+}
+
+#content.site-content {
+	margin-top: 2em;
+}
+
+article, article h2 {
+	font-family: 'Open Sans'
+}
+
+.entry-title{
+	font-family: 'Champagne';
+}
+
+.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Champagne';
+	}
+}
+
+header.entry-header .cat-links a:before {
+	display: none;
+}
+
+.entry-content, .entry-summary {
+	a, a:visited {
+		text-decoration: underline;
+	}
+}
+
+#secondary.widget-area {
+	font-size: 14px;
+	padding-top: 1em;
+}
+
+footer.site-footer {
+	.accent-background;
+	color: white;
+}
+
+.main_footer .site-social-footer {
+	margin: 1em 0;
+}
+
+.main_footer .site-social-footer a {
+	height: 30px;
+	width: 30px;
+	line-height: 28px;
+	font-size: 1em;
+}

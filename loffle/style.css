@@ -1,0 +1,449 @@
+/*!
+ Theme Name:		 Loffle
+ Theme URI:			https://www.example.com/
+ Description:		Custom theme for my lofflebear
+ Author:				 Ted Mitchell
+ Author URI:		 https://www.example.com
+ Template:			 fora
+ Version:				1.0.0
+*/
+@import "../fora/style.css";
+@font-face {
+  font-family: 'Bromello';
+  src: url('fonts/bromello.ttf');
+}
+@font-face {
+  font-family: 'Stylish';
+  src: url('fonts/Stylish Calligraphy Demo.ttf');
+}
+@font-face {
+  font-family: 'Champagne';
+  src: url('fonts/Champagne & Limousines.ttf');
+}
+a,
+a:visited {
+  color: #574c6d;
+}
+.tagcloud a,
+.tags-links a,
+.read-more a,
+.foraSliderCaption .sliderMore a,
+.page-links .page-links-number {
+  background-color: #574c6d;
+  color: white;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: #574c6d;
+}
+.site-main .navigation.pagination .nav-links .page-numbers.current,
+.woocommerce-pagination .page-numbers li .current.page-numbers {
+  border-color: #574c6d;
+}
+.site-main .navigation.pagination .nav-links .page-numbers,
+.woocommerce-pagination .page-numbers li .page-numbers,
+#toTop {
+  background-color: #574c6d;
+}
+blockquote {
+  border-color: #574c6d;
+}
+blockquote:before {
+  color: #574c6d;
+}
+\ body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+\ body.admin-bar .main-navigation {
+  top: 32px;
+}
+\ body.admin-bar .search-form {
+  top: 72px;
+}
+.main-navigation {
+  background-color: #f7f7f7;
+  left: 15px;
+  right: 15px;
+  position: fixed;
+  top: 15px;
+  width: auto;
+  margin-top: 0;
+  border-bottom-color: #574c6d;
+  border-bottom-width: 3px;
+  z-index: 9999;
+}
+.main-navigation ul {
+  margin: 0 15px;
+}
+.main-navigation a {
+  padding: 0.5em 1.5em;
+}
+.main-navigation .menu-menu-1-container {
+  display: inline-block;
+  width: 90%;
+}
+.main-navigation .email-toggle {
+  background-color: #f7f7f7;
+  color: #666666;
+  width: 8%;
+  transition: none;
+  -webkit-transition: none;
+  display: none;
+}
+.main-navigation .email-toggle:focus,
+.main-navigation .email-toggle:hover {
+  outline: none;
+  border: none;
+}
+.main-navigation .email-toggle.active {
+  border-color: #574c6d;
+  border-width: medium;
+  border-style: solid;
+}
+.main-navigation .search-toggle {
+  background-color: #f7f7f7;
+  color: #666666;
+  width: 8%;
+  transition: none;
+  -webkit-transition: none;
+}
+.main-navigation .search-toggle:focus,
+.main-navigation .search-toggle:hover {
+  outline: none;
+  border: none;
+}
+.main-navigation .search-toggle.active {
+  border-color: #574c6d;
+  border-width: medium;
+  border-style: solid;
+}
+.signup-dropdown {
+  position: fixed;
+  z-index: 9999;
+  top: 55px;
+  right: 15px;
+  display: none;
+  width: 300px;
+  max-width: 80vw;
+  background-color: #f7f7f7;
+  padding: 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: .accent;
+}
+.signup-dropdown.active {
+  display: block;
+}
+.search-form {
+  position: fixed;
+  z-index: 9999;
+  top: 55px;
+  right: 15px;
+  display: none;
+}
+.search-form.active {
+  display: block;
+}
+.search-form .search-submit {
+  height: 0;
+  width: 0;
+  border: none;
+  padding: 0;
+}
+.search-form label:before {
+  font-family: 'FontAwesome';
+  content: "\f002";
+  position: relative;
+  left: 30px;
+}
+.search-form .search-field {
+  width: 300px;
+  text-indent: 30px;
+}
+#page.site {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 51px;
+  bottom: 0px;
+}
+.site-title,
+p.site-title {
+  color: #666666;
+  font-family: 'Stylish';
+  font-size: 3.5em;
+  font-weight: normal;
+  margin: auto;
+}
+header.site-header .main-header {
+  top: 51px;
+}
+.header_wrapper {
+  padding-top: 1em;
+}
+.header_top {
+  display: table-header-group;
+}
+.site-search,
+.site-social {
+  padding: 0 0.5em;
+  text-align: left;
+  display: inline-block;
+  width: 30%;
+}
+.site-search {
+  margin-left: 40%;
+}
+.site-social a {
+  margin: 2px;
+  text-align: center;
+}
+.site-social.below {
+  display: none;
+}
+.site-branding {
+  display: block;
+  width: 100%;
+  border: none;
+  margin: auto;
+}
+.site-description {
+  font-family: 'Champagne';
+  font-size: 1.25em;
+  color: #574c6d;
+}
+.menu-toggle {
+  text-align: left;
+  background-color: #574c6d;
+}
+.menu-toggle:hover,
+.menu-toggle:active,
+.menu-toggle:focus {
+  background-color: #574c6d;
+}
+#content.site-content {
+  margin-top: 2em;
+}
+article,
+article h2 {
+  font-family: 'Open Sans';
+}
+.entry-title {
+  font-family: 'Champagne';
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-family: 'Champagne';
+}
+header.entry-header .cat-links a:before {
+  display: none;
+}
+.entry-content a,
+.entry-summary a,
+.entry-content a:visited,
+.entry-summary a:visited {
+  text-decoration: underline;
+}
+#secondary.widget-area {
+  font-size: 14px;
+  padding-top: 1em;
+}
+footer.site-footer {
+  background-color: #574c6d;
+  color: white;
+}
+.main_footer .site-social-footer {
+  margin: 1em 0;
+}
+.main_footer .site-social-footer a {
+  height: 30px;
+  width: 30px;
+  line-height: 28px;
+  font-size: 1em;
+}
+@media screen and (max-width: 1025px) {
+  .site-social a {
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.7em;
+    margin: 2px;
+  }
+  .main-navigation {
+    border: none;
+    background-color: #574c6d;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .main-navigation ul {
+    margin: 0;
+  }
+  .menu-toggle {
+    text-align: left;
+    background-color: #574c6d;
+    width: 80%;
+    display: inline;
+  }
+  .main-navigation .menu-menu-1-container {
+    position: fixed;
+    display: inline-block;
+    left: 0;
+    top: 45px;
+  }
+  .main-navigation .search-toggle {
+    background-color: #574c6d;
+    color: white;
+    width: 9%;
+    border-radius: 0;
+    font-size: 14px;
+    padding: 1em;
+    display: inline;
+    border: none;
+  }
+  .main-navigation .search-toggle.active {
+    border: none;
+  }
+  .main-navigation .email-toggle {
+    background-color: #574c6d;
+    color: white;
+    width: 9%;
+    border-radius: 0;
+    font-size: 14px;
+    padding: 1em;
+    display: inline;
+    border: none;
+  }
+  .main-navigation .email-toggle.active {
+    border: none;
+  }
+  .search-form {
+    top: 45px;
+  }
+  ul.nav-menu {
+    width: 250px;
+    border-color: #574c6d;
+    border-style: solid;
+    border-width: 3px;
+    border-top: none;
+    position: relative;
+    background-color: #f7f7f7;
+    z-index: 9999;
+  }
+  .main-navigation ul li .indicator {
+    line-height: 37px;
+    color: #574c6d;
+  }
+  body.admin-bar .main-navigation .menu-menu-1-container {
+    top: 77px;
+  }
+  body.admin-bar .search-form {
+    top: 77px;
+  }
+}
+@media (max-width: 1000px) {
+  #secondary.widget-area {
+    display: none;
+  }
+  .main-navigation .email-toggle {
+    display: initial;
+  }
+}
+@media (max-width: 767px) {
+  .site-social {
+    display: none;
+  }
+  .site-social.below {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .header_wrapper {
+    padding: 0;
+  }
+  .site-social a {
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.5em;
+    margin: 2px 15px;
+  }
+  .site-branding {
+    width: 70%;
+  }
+}
+@media (min-width: 559px) and (max-width: 767px) {
+  .site-title,
+  p.site-title {
+    font-size: 2.3em;
+  }
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .main-navigation {
+    top: 46px;
+  }
+  body.admin-bar .main-navigation .menu-menu-1-container {
+    top: 91px;
+  }
+  body.admin-bar .search-form {
+    top: 91px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body.admin-bar .main-navigation {
+    top: 0;
+  }
+  body.admin-bar .main-navigation .menu-menu-1-container {
+    top: 45px;
+  }
+  body.admin-bar .search-form {
+    top: 45px;
+  }
+  #wpadminbar {
+    z-index: 9998;
+  }
+}
+@media (max-width: 559px) {
+  .site-title,
+  p.site-title {
+    font-size: 2em;
+  }
+  .menu-toggle {
+    font-size: 1em;
+    width: 60%;
+  }
+  .main-navigation .menu-menu-1-container {
+    top: 39px;
+  }
+  .main-navigation .search-toggle {
+    font-size: 1em;
+    width: 18%;
+  }
+  .main-navigation .email-toggle {
+    font-size: 1em;
+    width: 18%;
+  }
+  .search-form {
+    top: 39px;
+  }
+  .search-form .search-field {
+    width: 175px;
+  }
+  .site-description {
+    font-size: 1em;
+  }
+  body.admin-bar .main-navigation .menu-menu-1-container {
+    top: 39px;
+  }
+  body.admin-bar .search-form {
+    top: 39px;
+  }
+}
