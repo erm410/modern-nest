@@ -40,5 +40,35 @@
 			$(".signup-dropdown").toggleClass("active");
 		});
 
+		function clearContactForm() {
+			$(".contact-form input:not([type='hidden'])").val("");
+			$(".contact-form textarea").val("");
+		}
+
+		window.loffleContactFormSubmit = function() {
+
+			$feedback = $(".contact-feedback");
+
+			$(".contact-form button").prop("disabled", true);
+
+			$.post({
+				url: "/wp-admin/admin-ajax.php",
+				data: $(".contact-form").serialize()
+			}).done(function() {
+				$feedback.removeClass("error");
+				$feedback.addClass("success");
+				$feedback.text("Message Sent");
+				$(".contact-form button").prop("disabled", false);
+				clearContactForm();
+			}).fail(function() {
+				$feedback.addClass("error");
+				$feedback.removeClass("success");
+				$feedback.text("Message not sent. Please try again.");
+				$(".contact-form button").prop("disabled", false);
+			});
+		};
+
+		$(".contact-form button.reset").click(clearContactForm);
+
 	});
 })(jQuery);

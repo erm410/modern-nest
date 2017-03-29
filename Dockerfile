@@ -7,6 +7,7 @@ RUN pecl install redis \
 	&& curl -O https://download.newrelic.com/php_agent/release/newrelic-php5-7.1.0.187-linux.tar.gz \
 	&& tar -xzvf newrelic-php5-7.1.0.187-linux.tar.gz \
 	&& cd newrelic-php5-7.1.0.187-linux \
-	&& ./newrelic-install install
+	&& ./newrelic-install install \
+	&& pear install --alldeps mail
 
 EXPOSE 80
