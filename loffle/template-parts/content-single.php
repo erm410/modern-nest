@@ -21,7 +21,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<p>
+		<p class="disclaimer">
 			I may receive a small compensation for products purchased through links on this page. See <a href="https://www.homemakersynonymous.com/?page_id=327#affiliate">here</a> for full info.
 		</p>
 		<?php
