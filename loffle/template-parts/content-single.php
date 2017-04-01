@@ -28,6 +28,7 @@
 			if ( '' != get_the_post_thumbnail() ) {
 				echo '<div class="entry-featuredImg">';
 				the_post_thumbnail('fora-standard');
+				echo get_post(get_post_thumbnail_id())->post_excerpt;
 				echo '</div>';
 			}
 		?>
