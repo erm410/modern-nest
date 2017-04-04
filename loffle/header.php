@@ -93,7 +93,7 @@
 				</div>
 				<div class="site-branding">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?= get_theme_root_uri() . 'loffle/images/hsLogo.jpg'?>" alt="Homemaker Synonymous - Where traditional skills meet modern lifesytles" />
+						<img src="<?= get_theme_root_uri() . '/loffle/images/hsLogo.jpg'?>" alt="Homemaker Synonymous - Where traditional skills meet modern lifesytles" />
 					</a>
 					<?php if($socialHeader == 1): ?>
 						<div class="site-social below">
