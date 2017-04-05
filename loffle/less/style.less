@@ -11,7 +11,7 @@
 @accent: #574c6d;
 @text-color: #666666;
 @background: #f7f7f7;
-@green: #7fc7af;
+@green: #99b698;
 
 @import "../fora/style.css";
 
@@ -44,6 +44,14 @@
 
 .default-text-color() {
 	color: @text-color
+}
+
+.button-hover() {
+
+	&:hover {
+		color: @green;
+		border-color: @green;
+	}
 }
 
 .on-top() {
