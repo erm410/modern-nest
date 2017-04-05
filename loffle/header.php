@@ -19,6 +19,12 @@
     enable_page_level_ads: true
   });
 </script>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+        data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"2be84c805c8e552dd2f94b776","lid":"a85296aafd"}) })
+</script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="p:domain_verify" content="1c90f88bd4944dc6a90c7547685a4390"/>
