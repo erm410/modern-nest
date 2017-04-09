@@ -98,9 +98,19 @@
 					<?php endif; ?>
 				</div>
 				<div class="site-branding">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?= get_theme_root_uri() . '/loffle/images/hsLogo.jpg'?>" alt="Homemaker Synonymous - Where traditional skills meet modern lifesytles" />
-					</a>
+					<?php
+					if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif;
+
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<?php
+					endif; ?>
 					<?php if($socialHeader == 1): ?>
 						<div class="site-social below">
 							<?php fora_social_buttons(); ?>
