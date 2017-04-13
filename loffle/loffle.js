@@ -29,17 +29,6 @@
 			$(".search-form").toggleClass("active");
 		});
 
-		$(".email-toggle").click(function() {
-			var toggle = $(this);
-			toggle.toggleClass("active");
-			if (toggle.hasClass("active")) {
-				toggle.attr("aria-expanded", "true");
-			} else {
-				toggle.attr("aria-expanded", "false");
-			}
-			$(".signup-dropdown").toggleClass("active");
-		});
-
 		function clearContactForm() {
 			$(".contact-form input:not([type='hidden'])").val("");
 			$(".contact-form textarea").val("");

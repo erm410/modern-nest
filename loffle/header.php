@@ -45,7 +45,6 @@
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 	<button class="email-toggle" aria-expanded="false"><i class="fa fa-envelope"></i></button>
-	<button class="search-toggle" aria-expanded="false"><i class="fa fa-search"></i></button>
 </nav><!-- #site-navigation -->
 </div>
 <?php get_search_form(); ?>
