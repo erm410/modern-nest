@@ -19,18 +19,10 @@
     enable_page_level_ads: true
   });
 </script>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
-        data-dojo-config="usePlainJson: true, isDebug: false">
-</script>
-<script type="text/javascript">
-  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"2be84c805c8e552dd2f94b776","lid":"a85296aafd"}) })
-</script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="p:domain_verify" content="1c90f88bd4944dc6a90c7547685a4390"/>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
-<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 
 <?php wp_head(); ?>
 </head>
@@ -55,33 +47,6 @@
 	<button class="email-toggle" aria-expanded="false"><i class="fa fa-envelope"></i></button>
 	<button class="search-toggle" aria-expanded="false"><i class="fa fa-search"></i></button>
 </nav><!-- #site-navigation -->
-<div class="signup-dropdown">
-	<p>
-		Sign up for our email list
-	</p>
-	<div id="mc_embed_signup">
-		<form action="//homemakersynonymous.us15.list-manage.com/subscribe/post?u=2be84c805c8e552dd2f94b776&amp;id=a85296aafd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			<div id="mc_embed_signup_scroll">
-
-				<div class="mc-field-group">
-					<label for="mce-EMAIL">Email Address </label>
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL">
-				</div>
-				<div class="mc-field-group">
-					<label for="mce-FNAME">First Name </label>
-					<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-				</div>
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2be84c805c8e552dd2f94b776_a85296aafd" tabindex="-1" value=""></div>
-				<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-			</div>
-		</form>
-	</div>
-
-	<!--End mc_embed_signup-->
 </div>
 <?php get_search_form(); ?>
 <div id="page" class="site">
