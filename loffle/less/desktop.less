@@ -170,9 +170,19 @@ header.site-header {
 
 .site-branding {
 	display: block;
-	width: 75%;
+	width: 100%;
 	border: none;
-	margin: auto;
+
+	a.site-logo {
+		display: block;
+		width: 80vw;
+		height: 20vw;
+		margin: auto;
+		background-image: url("images/hsLogo.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
 }
 
 .site-description {
@@ -192,6 +202,30 @@ header.site-header {
 
 #content.site-content {
 	margin-top: 2em;
+}
+
+.category-images {
+	text-align: center;
+	a {
+		margin: 2px;
+		display: inline-block;
+		width: 25vw;
+		height: 25vw;
+		background-size: contain;
+
+		&.diy {
+			background-image: url("images/diy.svg");
+		}
+
+		&.home-management {
+			background-image: url("images/home.svg");
+		}
+
+		&.healthy-living {
+			background-image: url("images/healthyLiving.svg");
+		}
+
+	}
 }
 
 article, article h2 {

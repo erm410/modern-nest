@@ -14,10 +14,10 @@
 <head>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3675234348680689",
-    enable_page_level_ads: true
-  });
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-3675234348680689",
+		enable_page_level_ads: true
+	});
 </script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,7 +31,7 @@
 <?php
 	$siteBorder = get_theme_mod('fora_theme_options_siteborder', '1');
 	$socialHeader = get_theme_mod('fora_theme_options_socialheader', '1');
-	$showSlider = get_theme_mod('fora_theme_options_postslider', '');
+	$showSlider = '';
 	$postsSlider = get_theme_mod('fora_theme_options_slidernumber', '4');
 	$showSearch = get_theme_mod('fora_theme_options_showsearch', '1');
 ?>
@@ -44,7 +44,7 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-	<button class="email-toggle" aria-expanded="false"><i class="fa fa-envelope"></i></button>
+	<button class="search-toggle" aria-expanded="false"><i class="fa fa-search"></i></button>
 </nav><!-- #site-navigation -->
 </div>
 <?php get_search_form(); ?>
@@ -62,19 +62,7 @@
 					<?php endif; ?>
 				</div>
 				<div class="site-branding">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
-
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
+					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
 					<?php if($socialHeader == 1): ?>
 						<div class="site-social below">
 							<?php fora_social_buttons(); ?>
@@ -124,7 +112,7 @@
 								<h3><a href="<?php echo esc_url(get_permalink()); ?>" class="flexTitle"><?php echo wp_trim_words( get_the_title(), 7 ); ?></a></h3>
 								<div class="entry-slider">
 									<span class="posted-on"><i class="fa fa-calendar-o spaceRight"></i><?php the_time(get_option('date_format')); ?></span>
-									<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight"></i><?php $cat = get_the_category(); $cat = $cat[0]; echo $cats = get_category_parents($cat, TRUE, '');  ?></span>
+									<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight"></i><?php $cat = get_the_category(); $cat = $cat[0]; echo $cats = get_category_parents($cat, TRUE, '');	?></span>
 								</div>
 								<div class="sliderMore"><a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'Read More', 'fora' ); ?><i class="fa spaceLeft fa-caret-right"></i></a></div>
 							</div>
