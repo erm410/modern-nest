@@ -175,8 +175,8 @@ header.site-header {
 
 	a.site-logo {
 		display: block;
-		width: 80vw;
-		height: 20vw;
+		width: 60%;
+		padding-bottom: 15%;
 		margin: auto;
 		background-image: url("images/hsLogo.svg");
 		background-repeat: no-repeat;
@@ -205,12 +205,15 @@ header.site-header {
 }
 
 .category-images {
-	text-align: center;
+
+	text-align: justify;
+	padding: 0 15%;
+
 	a {
 		margin: 2px;
 		display: inline-block;
-		width: 25vw;
-		height: 25vw;
+		width: 30%;
+		padding-bottom: 30%;
 		background-size: contain;
 
 		&.diy {
@@ -225,6 +228,12 @@ header.site-header {
 			background-image: url("images/healthyLiving.svg");
 		}
 
+	}
+
+	&:after {
+		content: "";
+		width: 100%;
+		display: inline-block;
 	}
 }
 

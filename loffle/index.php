@@ -13,11 +13,11 @@
  */
 
 get_header(); ?>
-	<div class="category-images">
+	<!-- <div class="category-images">
 		<a class="diy" href="/?cat=4" aria-label="DIY"></a>
 		<a class="home-management" href="/?cat=8" aria-label="Home"></a>
 		<a class="healthy-living" href="/?cat=7" aria-label="Healthy Living"></a>
-	</div>
+	</div> -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
