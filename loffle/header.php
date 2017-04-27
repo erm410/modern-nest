@@ -21,7 +21,7 @@
 </script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="p:domain_verify" content="1c90f88bd4944dc6a90c7547685a4390"/>
+<meta name="p:domain_verify" content="b8dc0e938a9441c9bdf98b0f27748a57"/>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
