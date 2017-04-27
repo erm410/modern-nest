@@ -21,7 +21,7 @@ function contact_post() {
 	$site = $_POST['site'];
 	$message = $_POST['message'];
 
-	$hsAddress = '<homemakersynonymous@gmail.com>';
+	$hsAddress = '<amanda@themodernnestblog.com>';
 	$smtp = Mail::factory(
 	'smtp',
 		array(
@@ -35,7 +35,7 @@ function contact_post() {
 	$mail = $smtp->send(
 		$hsAddress,
 		array(
-			'From' => "Homesyn Contact Form $hsAddress",
+			'From' => "Modern Nest Contact Form $hsAddress",
 			'To'=> $hsAddress,
 			'Subject' => "Contact from $name ($email)",
 			'Reply-To'=> $email

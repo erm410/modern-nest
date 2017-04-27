@@ -40,6 +40,9 @@
 	<div class="border-fixed border-bottom"></div>
 	<div class="border-fixed border-left"></div>
 	<div class="border-fixed border-right"></div>
+	<div class="site-social site-social-fixed">
+		<?php fora_social_buttons(); ?>
+	</div>
 <?php endif; ?>
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
@@ -53,23 +56,14 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="main_header">
-			<div class="header_wrapper">
-				<div class="header_top">
-					<?php if($socialHeader == 1): ?>
-						<div class="site-social">
-							<?php fora_social_buttons(); ?>
-						</div><!-- .site-social -->
-					<?php endif; ?>
-				</div>
-				<div class="site-branding">
-					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
-					<?php if($socialHeader == 1): ?>
-						<div class="site-social below">
-							<?php fora_social_buttons(); ?>
-						</div><!-- .site-social -->
-					<?php endif; ?>
-				</div><!-- .site-branding -->
-			</div><!-- .header_wrapper -->
+			<div class="site-branding">
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
+				<?php if($socialHeader == 1): ?>
+					<div class="site-social below">
+						<?php fora_social_buttons(); ?>
+					</div><!-- .site-social -->
+				<?php endif; ?>
+			</div><!-- .site-branding -->
 		</div><!-- .main_header -->
 
 	</header><!-- #masthead -->
@@ -123,6 +117,20 @@
 			</div>
 		</div>
 	<?php endif; ?>
+	<?php
+	if (is_home()) {
+	?>
+	<!-- <div class="category-images">
+		<a href="/?cat=4" >Diy</a>
+		<a href="/?cat=8" >Organization</a>
+		<a href="/?cat=8" >Cleaning and Laundry</a>
+		<a href="/?cat=8" >Parenting</a>
+		<a href="/?cat=7" >Healthy Living</a>
+		<a href="/?cat=8" >Cooking and Meal Planning</a>
+	</div> -->
+	<?php
+	}
+	?>
 
 	<div id="content" class="site-content">
 		<div class="clear">
