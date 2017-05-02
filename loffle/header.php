@@ -120,14 +120,50 @@
 	<?php
 	if (is_home()) {
 	?>
-	<!-- <div class="category-images">
-		<a href="/?cat=4" >Diy</a>
-		<a href="/?cat=8" >Organization</a>
-		<a href="/?cat=8" >Cleaning and Laundry</a>
-		<a href="/?cat=8" >Parenting</a>
-		<a href="/?cat=7" >Healthy Living</a>
-		<a href="/?cat=8" >Cooking and Meal Planning</a>
-	</div> -->
+	<div class="category-images">
+		<a href="/?cat=4" >
+			<div>
+				<div>
+					Diy
+				</div>
+			</div>
+		</a>
+		<a href="/?cat=8" >
+			<div>
+				<div>
+					Organization
+				</div>
+			</div>
+		</a>
+		<a href="/?cat=8" >
+			<div>
+				<div >
+					Cleaning and Laundry
+				</div>
+			</div>
+		</a>
+		<a href="/?cat=8" >
+			<div>
+				<div>
+					Parenting
+				</div>
+			</div>
+		</a>
+		<a href="/?cat=7" >
+			<div>
+				<div>
+					Healthy Living
+				</div>
+			</div>
+		</a>
+		<a href="/?cat=8" >
+			<div>
+				<div>
+					Cooking and Meal Planning
+				</div>
+			</div>
+		</a>
+	</div>
 	<?php
 	}
 	?>
