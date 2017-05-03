@@ -136,21 +136,21 @@
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=8" >
+		<a href="/?cat=3" >
 			<div>
 				<div>
 					Organization
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=8" >
+		<a href="/?cat=12" >
 			<div>
 				<div >
 					Cleaning and Laundry
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=8" >
+		<a href="/?cat=16" >
 			<div>
 				<div>
 					Parenting
@@ -164,7 +164,7 @@
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=8" >
+		<a href="/?cat=15" >
 			<div>
 				<div>
 					Cooking and Meal Planning
