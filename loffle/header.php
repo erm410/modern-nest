@@ -12,13 +12,21 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php
+	if (!is_category()) {
+?>
+
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-	(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-3675234348680689",
-		enable_page_level_ads: true
-	});
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2223370846519658",
+    enable_page_level_ads: true
+  });
 </script>
+
+<?php
+	}
+?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="p:domain_verify" content="b8dc0e938a9441c9bdf98b0f27748a57"/>
