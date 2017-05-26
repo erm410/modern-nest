@@ -48,10 +48,10 @@
 	<div class="border-fixed border-bottom"></div>
 	<div class="border-fixed border-left"></div>
 	<div class="border-fixed border-right"></div>
-	<div class="site-social site-social-fixed">
-		<?php fora_social_buttons(); ?>
-	</div>
 <?php endif; ?>
+<div class="site-social site-social-fixed">
+	<?php fora_social_buttons(); ?>
+</div>
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
