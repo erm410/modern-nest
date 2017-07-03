@@ -11,7 +11,7 @@
       "ContainerDirectory": "/var/www/html"
     },
     {
-      "HostDirectory": "/var/app/current/apache.conf",
+      "HostDirectory": "/mnt/wp/apache.conf",
       "ContainerDirectory": "/etc/apache2/sites-enabled/000-default.conf"
     },
 		{
