@@ -4,6 +4,7 @@ COPY nginx/entrypoint /entrypoint
 
 RUN apt-get update && apt-get install -y nginx git node-less \
   && pecl install redis \
+	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-enable redis \
 	&& cd /opt \
 	&& curl -O https://download.newrelic.com/php_agent/archive/7.2.0.191/newrelic-php5-7.2.0.191-linux.tar.gz \
