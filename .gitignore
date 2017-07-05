@@ -1,6 +1,7 @@
 homesyn.zip
 loffle/style.css
 plugins
+/wp/wp-content
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
