@@ -11,10 +11,6 @@
       "ContainerDirectory": "/var/www/html/wp-content"
     },
     {
-      "HostDirectory": "/var/app/current/nginx/entrypoint",
-      "ContainerDirectory": "/entrypoint"
-    },
-		{
 			"HostDirectory": "/etc/passwd",
 			"ContainerDirectory": "/etc/passwd"
 		}
