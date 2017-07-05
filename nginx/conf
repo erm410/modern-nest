@@ -14,8 +14,8 @@
 #Redirect to canonical server
 
 server {
-	listen 80 http;
-	listen [::]:80 http;
+	listen 80;
+	listen [::]:80;
 
 	server_name _;
 	return 301 https://www.themodernnestblog.com$request_uri;
@@ -29,8 +29,8 @@ upstream php {
 # Default server configuration
 #
 server {
-	listen 80 http;
-	listen [::]:80 http;
+	listen 80;
+	listen [::]:80;
 
 	root /var/www/html;
 
