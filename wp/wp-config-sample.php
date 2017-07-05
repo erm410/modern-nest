@@ -20,22 +20,22 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wp');
+define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', 'wp');
+define('DB_USER', 'username_here');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'wp');
+define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
-define('DB_HOST', 'wpdb.homemakersynonymous.com');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', 'utf8_general_ci');
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -46,14 +46,14 @@ define('DB_COLLATE', 'utf8_general_ci');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '2l(g[wvj>mXw56MuTl~$2gIR+6jObF|a|l=>](9-f}UmNpF)wSUH*$!O0/%+1P?;');
-define('SECURE_AUTH_KEY',  'Gpo!`v6/N}p_FNQr&=nFARQ<ve,u)fC)xNdc/3<iHP>]<@bNP+jf<|fD1cw#31#~');
-define('LOGGED_IN_KEY',    '/L5U!J1_X>UlNGU^M]:/Z%MLCfZr UGcd{{zBS|TW5|T|^s7HRH+KZR=upGMvb!e');
-define('NONCE_KEY',        'Y|%Df@+lJxOB0CB.#i(<ZAhSnue=-%+}NEi4 B-gYk&/w<2W~!BaEXZz(2dS)P6V');
-define('AUTH_SALT',        '0horgyK*-f]+-O[p +<N)#:;)dOCHg^1}~|I:MH*3]qsbJlZQ||us8f{^Qb@{ Ou');
-define('SECURE_AUTH_SALT', '*]S8JPUN=a$.)l<5Ho(n(Q2Q2vIcv<bK#v;nV3a(:=aK!h,W8~cx<A(lKfu<J*O~');
-define('LOGGED_IN_SALT',   '68rOH+Mu?MW?d&-.*ww+|e>i!PrQ1ISr<-+gW>64`5=+0!DCXSM?Te`gqgybK,9-');
-define('NONCE_SALT',       '`~9>R|*P`)+!Cv]bM3Y.*/u|BD w-5iv`P0R|eJe!7#gw8%o?aK+8Ai#GTN~V?e)');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -84,14 +84,6 @@ define('WP_DEBUG', false);
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
-  $_SERVER['HTTPS'] = 'on';
-
-define('FS_METHOD','direct');
-
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
