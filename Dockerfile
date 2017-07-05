@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y nginx git node-less && \
 	&& ./newrelic-install install \
 	&& pear install --alldeps mail
 
+EXPOSE 80
+
 ENTRYPOINT ["/entrypoint"]
 
 CMD ["php-fpm"]
