@@ -11,6 +11,10 @@
       "ContainerDirectory": "/var/www/html/wp-content"
     },
     {
+      "HostDirectory": "/mnt/wp/html/wp-config.php",
+      "ContainerDirectory": "/var/www/html/wp-config.php"
+    },
+    {
 			"HostDirectory": "/etc/passwd",
 			"ContainerDirectory": "/etc/passwd"
 		}
