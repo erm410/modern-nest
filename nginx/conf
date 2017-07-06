@@ -86,45 +86,30 @@ server {
 				add_header Access-Control-Allow-Origin *;
 		}
 
-		location ~ /wp-content/cache/minify/.*\.js$ {
-				types {}
-				default_type application/x-javascript;
-				expires modified 1d;
-				add_header Vary "Accept-Encoding";
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=86400, public";
+		location ~ _index_ssl\.html_gzip$ {
+			gzip off;
+			types {}
+			default_type text/html;
+			expires 3600s;
+	    add_header Pragma "public";
+	    add_header Cache-Control "max-age=3600, public";
+			add_header Vary "Accept-Encoding";
+			add_header Content-Encoding gzip;
 		}
-		location ~ /wp-content/cache/minify/.*\.css$ {
-				types {}
-				default_type text/css;
-				expires modified 1d;
-				add_header Vary "Accept-Encoding";
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=86400, public";
-		}
-		location ~ /wp-content/cache/minify/.*js_gzip$ {
-				gzip off;
-				types {}
-				default_type application/x-javascript;
-				expires modified 1d;
-				add_header Vary "Accept-Encoding";
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=86400, public";
-				add_header Content-Encoding gzip;
-		}
-		location ~ /wp-content/cache/minify/.*css_gzip$ {
-				gzip off;
-				types {}
-				default_type text/css;
-				expires modified 1d;
-				add_header Vary "Accept-Encoding";
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=86400, public";
-				add_header Content-Encoding gzip;
+
+		location ~ _index_ssl\.html$ {
+			types {}
+			default_type text/html;
+			expires 3600s;
+			add_header Pragma "public";
+			add_header Cache-Control "max-age=3600, public";
+			add_header Vary "Accept-Encoding";
 		}
 
 		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
-		try_files $uri $uri/ $uri.html /index.php?$args;
+		try_files /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html_gzip
+		  /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html
+		  $uri $uri/ $uri.html /index.php?$args;
 
 	}
 
