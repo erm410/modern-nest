@@ -76,7 +76,6 @@ server {
 		    expires 3600s;
 		    add_header Pragma "public";
 		    add_header Cache-Control "max-age=3600, public";
-		    add_header X-Powered-By "W3 Total Cache/0.9.5.4";
 		}
 
 		location ~ \.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip)$ {
@@ -84,11 +83,32 @@ server {
 				log_not_found off;
 		    add_header Pragma "public";
 		    add_header Cache-Control "max-age=31536000, public";
-		    try_files $uri $uri/ $uri.html /index.php?$args;
+		}
+
+		location ~ _index_ssl\.html_gzip$ {
+			gzip off;
+			types {}
+			default_type text/html;
+			expires 3600s;
+	    add_header Pragma "public";
+	    add_header Cache-Control "max-age=3600, public";
+			add_header Vary "Accept-Encoding";
+			add_header Content-Encoding gzip;
+		}
+
+		location ~ _index_ssl\.html$ {
+			types {}
+			default_type text/html;
+			expires 3600s;
+	    add_header Pragma "public";
+	    add_header Cache-Control "max-age=3600, public";
+			add_header Vary "Accept-Encoding";
 		}
 
 		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
-		try_files $uri $uri/ $uri.html /index.php?$args;
+		try_files /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html_gzip
+		  /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html
+		  $uri $uri/ $uri.html /index.php?$args;
 
 	}
 
