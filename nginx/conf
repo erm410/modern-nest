@@ -123,15 +123,6 @@ server {
 				add_header Content-Encoding gzip;
 		}
 
-		set $w3tc_enc "";
-		if ($http_accept_encoding ~ gzip) {
-		    set $w3tc_enc _gzip;
-		}
-		if (-f $request_filename$w3tc_enc) {
-		    rewrite (.*) $1$w3tc_enc break;
-		}
-		rewrite ^/wp-content/cache/minify/ /index.php last;
-
 		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 		try_files $uri $uri/ $uri.html /index.php?$args;
 
