@@ -83,7 +83,7 @@ server {
 				log_not_found off;
 		    add_header Pragma "public";
 		    add_header Cache-Control "max-age=31536000, public";
-				add_header Access-Control-Allow-Origin www.themodernnestblog.com;
+				add_header Access-Control-Allow-Origin *;
 		}
 
 		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
