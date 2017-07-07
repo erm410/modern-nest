@@ -76,6 +76,7 @@ server {
 		    expires 3600s;
 		    add_header Pragma "public";
 		    add_header Cache-Control "max-age=3600, public";
+		    add_header X-Powered-By "W3 Total Cache/0.9.5.4";
 		}
 
 		location ~ \.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip)$ {
@@ -83,7 +84,7 @@ server {
 				log_not_found off;
 		    add_header Pragma "public";
 		    add_header Cache-Control "max-age=31536000, public";
-				add_header Access-Control-Allow-Origin www.themodernnestblog.com
+		    try_files $uri $uri/ $uri.html /index.php?$args;
 		}
 
 		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
