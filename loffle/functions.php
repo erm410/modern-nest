@@ -52,3 +52,12 @@ function contact_post() {
 }
 add_action('wp_ajax_contact_post', 'contact_post');
 add_action('wp_ajax_nopriv_contact_post', 'contact_post');
+
+remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
+
+foreach ($_COOKIE as $name => $value) {
+	if (strpos($name, "comment_author") === 0) {
+		unset($_COOKIE[$name]);
+		setcookie($name, null, -1, "/");
+	}
+}
