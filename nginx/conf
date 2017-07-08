@@ -39,78 +39,89 @@ server {
 
 	server_name www.themodernnestblog.com;
 
-	location / {
+	if ($http_x_forwarded_proto = "http") {
+		return 301 https://$server_name$request_uri;
+	}
 
-		if ($http_x_forwarded_proto = "http") {
-			return 301 https://$server_name$request_uri;
-		}
+	gzip on;
+	gzip_types text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon image/webp application/json application/vnd.ms-access application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint application/x-shockwave-flash image/tiff application/x-font-ttf audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel;
 
-		gzip on;
-		gzip_types text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon image/webp application/json application/vnd.ms-access application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint application/x-shockwave-flash image/tiff application/x-font-ttf audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel;
+	add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
-		location ~ /\. {
-			deny all;
-		}
+	set $skip_cache 0;
 
-		location ~ \.php$ {
+	if ($http_cookie ~* ""^wordpress_") {
+		set $skip_cache 1;
+	}
 
-			location ~* /(?:uploads|files)/.*\.php$ {
-				deny all;
-			}
+	if ($request_method = "POST") {
+		set $skip_cache 1;
+	}
 
-			include snippets/fastcgi-php.conf;
-			fastcgi_pass php;
-			fastcgi_intercept_errors on;
-			fastcgi_buffers 16 16k;
-			fastcgi_buffer_size 32k;
-		}
+	if ($request_uri ~* "/wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml") {
+		set $skip_cache 1;
+	}
 
-		location ~ \.(css|htc|less|js|js2|js3|js4)$ {
-				expires 1d;
-				log_not_found off;
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=86400, public";
-		}
+	if ($query_string !~* "^(?:|testing=true)$") {
+		set $skip_cache 1
+	}
 
-		location ~ \.(html|htm|rtf|rtx|svg|txt|xsd|xsl|xml)$ {
-				expires 3600s;
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=3600, public";
-		}
+	fastcgi_cache_path /var/www/html/wp-content/cache/nginx levels=1:2 keys_zone=WORDPRESS:10m inactive=1d max_size=100m;
+	fastcgi_cache_key "$scheme$request_method$host$request_uri";
+	fastcgi_cache_use_stale updating error timeout invalid_header http_500;
+	fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
+	fastcgi_temp_path /var/www/html/wp-content/temp/fcgi
 
-		location ~ \.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip)$ {
-				expires 31536000s;
-				log_not_found off;
-				add_header Pragma "public";
-				add_header Cache-Control "max-age=31536000, public";
-				add_header Access-Control-Allow-Origin *;
-		}
+	location ~ /\. {
+		deny all;
+	}
 
-		location ~ _index_ssl\.html_gzip$ {
-			gzip off;
-			types {}
-			default_type text/html;
-			expires 3600s;
-	    add_header Pragma "public";
-	    add_header Cache-Control "max-age=3600, public";
-			add_header Vary "Accept-Encoding";
-			add_header Content-Encoding gzip;
-		}
+	location ~* /(?:uploads|files)/.*\.php$ {
+		deny all;
+	}
 
-		location ~ _index_ssl\.html$ {
-			types {}
-			default_type text/html;
-			expires 3600s;
+	location ~* \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass php;
+		fastcgi_intercept_errors on;
+		fastcgi_buffers 16 16k;
+		fastcgi_buffer_size 32k;
+
+		fastcgi_cache_bypass $skip_cache;
+		fastcgi_no_cache $skip_cache;
+
+		fastcgi_cache WORDPRESS;
+		fastcgi_cache_lock on;
+    fastcgi_cache_valid 200 1m;
+	}
+
+	location ~ \.(css|htc|less|js|js2|js3|js4)$ {
+		expires 1d;
+		log_not_found off;
+		add_header Pragma "public";
+		add_header Cache-Control "max-age=86400, public";
+		try_files $uri /index.php?$args;
+	}
+
+	location ~ \.(html|htm|rtf|rtx|txt|xsd|xsl|xml)$ {
+		expires 3600s;
+		log_not_found off;
+		add_header Pragma "public";
+		add_header Cache-Control "max-age=3600, public";
+		try_files $uri /index.php$args;
+	}
+
+	location ~ \.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip)$ {
+			expires 31536000s;
+			log_not_found off;
 			add_header Pragma "public";
-			add_header Cache-Control "max-age=3600, public";
-			add_header Vary "Accept-Encoding";
-		}
+			add_header Cache-Control "max-age=31536000, public";
+			add_header Access-Control-Allow-Origin *;
+			try_files $uri /index.php$args;
+	}
 
-		add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
-		try_files /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html_gzip
-		  /wp-content/cache/page_enhanced/www.themodernnestblog.com/$uri/_index_ssl.html
-		  $uri $uri/ $uri.html /index.php?$args;
-
+	location / {
+		try_files $uri $uri/ /index.php$args;
 	}
 
 }
