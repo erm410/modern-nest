@@ -11,8 +11,13 @@
 # Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
 ##
 
-#Redirect to canonical server
+fastcgi_cache_path /var/www/html/wp-content/cache/nginx levels=1:2 keys_zone=WORDPRESS:10m inactive=1d max_size=100m;
+fastcgi_cache_key "$scheme$request_method$host$request_uri";
+fastcgi_cache_use_stale updating error timeout invalid_header http_500;
+fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
+fastcgi_temp_path /var/www/html/wp-content/temp/fcgi;
 
+#Redirect to canonical server
 server {
 	listen 80;
 	listen [::]:80;
@@ -62,14 +67,8 @@ server {
 	}
 
 	if ($query_string !~* "^(?:|testing=true)$") {
-		set $skip_cache 1
+		set $skip_cache 1;
 	}
-
-	fastcgi_cache_path /var/www/html/wp-content/cache/nginx levels=1:2 keys_zone=WORDPRESS:10m inactive=1d max_size=100m;
-	fastcgi_cache_key "$scheme$request_method$host$request_uri";
-	fastcgi_cache_use_stale updating error timeout invalid_header http_500;
-	fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
-	fastcgi_temp_path /var/www/html/wp-content/temp/fcgi
 
 	location ~ /\. {
 		deny all;
