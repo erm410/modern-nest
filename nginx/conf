@@ -52,24 +52,6 @@ server {
 
 	add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
-	set $skip_cache 0;
-
-	if ($http_cookie ~* "wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in") {
-		set $skip_cache 1;
-	}
-
-	if ($request_method = "POST") {
-		set $skip_cache 1;
-	}
-
-	if ($request_uri ~* "/wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml") {
-		set $skip_cache 1;
-	}
-
-	if ($query_string !~* "^(?:|testing=true)$") {
-		set $skip_cache 1;
-	}
-
 	location ~ /\. {
 		deny all;
 	}
@@ -79,6 +61,25 @@ server {
 	}
 
 	location ~* \.php$ {
+
+		set $skip_cache 0;
+
+		if ($http_cookie ~* "wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in") {
+			set $skip_cache 1;
+		}
+
+		if ($request_method = "POST") {
+			set $skip_cache 1;
+		}
+
+		if ($request_uri ~* "/wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml") {
+			set $skip_cache 1;
+		}
+
+		if ($query_string !~* "^(?:|testing=true)$") {
+			set $skip_cache 1;
+		}
+		
 		include snippets/fastcgi-php.conf;
 		fastcgi_pass php;
 		fastcgi_intercept_errors on;
