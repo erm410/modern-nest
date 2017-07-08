@@ -24,8 +24,19 @@ fi
 cp newrelic.ini opcache.ini /usr/local/etc/php/conf.d
 cp nginx/conf /etc/nginx/conf.d/default.conf
 cp nginx/common /etc/nginx/common.conf
-mkdir -p /var/www/html
+
+mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi}
+
+mv /var/www/html/wp-content /tmp
+
+rm -rf /var/www/html/*
+
 cp -r wp/* /var/www/html
+
+mv /tmp/wp-content /var/www/html
+
+rm -rf /var/www/html/wp-content/themes/{loffle,fora}
 cp -r fora loffle /var/www/html/wp-content/themes
+
 cd /var/www/html/wp-content/themes/loffle
 lessc less/style.less style.css
