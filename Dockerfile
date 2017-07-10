@@ -6,8 +6,8 @@ COPY nginx/update.sh /update.sh
 ADD http://nginx.org/keys/nginx_signing.key /nginx.key
 
 RUN apt-key add /nginx.key \
-	&& echo deb http://nginx.org/packages/mainline/debian/ jessie nginx >> /etc/apt/sources.list \
-	&& echo deb-src http://nginx.org/packages/mainline/debian/ jessie nginx >> /etc/apt/sources.list \
+	&& echo deb http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
+	&& echo deb-src http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
 	&& apt-get update && apt-get install -y nginx git node-less libpng-dev libjpeg62-turbo-dev \
 	&& pecl install redis \
 	&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include \

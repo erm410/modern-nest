@@ -44,7 +44,7 @@ location ~* \.php$ {
 		set $skip_cache 1;
 	}
 
-	include snippets/fastcgi-php.conf;
+	include fastcgi_params;
 	fastcgi_pass php;
 	fastcgi_intercept_errors on;
 	fastcgi_buffers 16 16k;
