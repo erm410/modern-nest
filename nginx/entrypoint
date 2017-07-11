@@ -14,7 +14,7 @@ else
 
 fi
 
-cp newrelic.ini /usr/local/etc/php/conf.d
+cp newrelic.ini opcache.ini /usr/local/etc/php/conf.d
 cp nginx/conf /etc/nginx/sites-enabled/default
 cp -r wp/* /var/www/html
 cp -r fora loffle /var/www/html/wp-content/themes
