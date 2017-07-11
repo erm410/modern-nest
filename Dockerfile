@@ -2,8 +2,9 @@ FROM php:7.1-fpm
 
 COPY nginx/entrypoint /entrypoint
 
-RUN apt-get update && apt-get install -y nginx git node-less libpng-dev \
+RUN apt-get update && apt-get install -y nginx git node-less libpng-dev libjpeg62-turbo-dev \
   && pecl install redis \
+	&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include \
 	&& docker-php-ext-install mysqli gd opcache \
 	&& docker-php-ext-enable redis \
 	&& cd /opt \
