@@ -11,7 +11,7 @@ RUN apt-key add /nginx.key \
 	&& apt-get update && apt-get install -y nginx git node-less libpng-dev libjpeg62-turbo-dev \
 	&& pecl install redis \
 	&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include \
-	&& docker-php-ext-install mysqli gd opcache \
+	&& docker-php-ext-install -j`nproc` mysqli gd opcache \
 	&& docker-php-ext-enable redis \
 	&& cd /opt \
 	&& curl -O https://download.newrelic.com/php_agent/archive/7.2.0.191/newrelic-php5-7.2.0.191-linux.tar.gz \

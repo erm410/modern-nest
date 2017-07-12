@@ -2,8 +2,6 @@
 
 /update.sh
 
-chown -R www-data:www-data /var/www/html/wp-content
-
 service nginx start
 
 exec docker-php-entrypoint "$@"

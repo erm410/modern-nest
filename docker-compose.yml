@@ -12,8 +12,6 @@ services:
     volumes:
       - ./local-config.php:/var/www/html/wp-config.php
       - /var/www/html/wp-content
-      - ./fora:/var/www/html/wp-content/themes/fora
-      - ./loffle:/var/www/html/wp-content/themes/loffle
     ports:
       - "8080:80"
     links:
