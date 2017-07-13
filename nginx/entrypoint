@@ -2,6 +2,6 @@
 
 /update.sh
 
-service nginx start
+nginx
 
 exec docker-php-entrypoint "$@"

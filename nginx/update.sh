@@ -22,7 +22,7 @@ else
 fi
 
 cp newrelic.ini opcache.ini /usr/local/etc/php/conf.d
-cp nginx/conf /etc/nginx/conf.d/default.conf
+cp nginx/conf /etc/nginx/nginx.conf
 cp nginx/common /etc/nginx/common.conf
 
 mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi}
