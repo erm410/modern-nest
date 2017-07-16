@@ -129,42 +129,42 @@
 	if (is_home()) {
 	?>
 	<div class="category-images">
-		<a href="/?cat=4" >
+		<a href="/archives/category/diy-and-decorating" >
 			<div>
 				<div>
 					Diy
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=3" >
+		<a href="/archives/category/organization" >
 			<div>
 				<div>
 					Organization
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=12" >
+		<a href="/archives/category/cleaning-and-laundry" >
 			<div>
 				<div >
 					Cleaning and Laundry
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=16" >
+		<a href="/archives/category/parenting" >
 			<div>
 				<div>
 					Parenting
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=7" >
+		<a href="/archives/category/healthy-living" >
 			<div>
 				<div>
 					Healthy Living
 				</div>
 			</div>
 		</a>
-		<a href="/?cat=15" >
+		<a href="/archives/category/cooking-and-meal-planning" >
 			<div>
 				<div>
 					Cooking and Meal Planning
