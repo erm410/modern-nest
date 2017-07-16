@@ -2,6 +2,7 @@
 
 require_once('Mail.php');
 
+add_filter( 'auto_update_theme', '__return_true' );
 
 function loffle_scripts() {
 	wp_enqueue_script( 'loffle-custom', get_theme_root_uri() . '/loffle/loffle.js', array('jquery', 'jquery'), '1.0', true );

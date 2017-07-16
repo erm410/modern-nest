@@ -1,15 +1,5 @@
 version: '2'
 services:
-  # nginx:
-  #   image: nginx
-  #   ports:
-  #     - '443:443'
-  #   volumes:
-  #     - /home/ted/le/config/live/www.homemakersynonymous.com/fullchain.pem:/etc/nginx/cert.pem
-  #     - /home/ted/le/config/live/www.homemakersynonymous.com/privkey.pem:/etc/nginx/key.pem
-  #     - ./nginx.conf:/etc/nginx/default.conf
-  #   links:
-  #     - wp
   db:
     image: mariadb
     environment:
@@ -20,12 +10,8 @@ services:
   wp:
     build: .
     volumes:
-      - ./wp:/var/www/html
       - ./local-config.php:/var/www/html/wp-config.php
-      - ./local-htaccess:/var/www/html/.htaccess
-      - ./plugins:/var/www/html/wp-content/plugins
-      - ./fora:/var/www/html/wp-content/themes/fora
-      - ./loffle:/var/www/html/wp-content/themes/loffle
+      - /var/www/html/wp-content
     ports:
       - "8080:80"
     links:
