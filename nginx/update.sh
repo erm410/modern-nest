@@ -36,4 +36,4 @@ cp -r fora loffle /var/www/html/wp-content/themes
 cd /var/www/html/wp-content/themes/loffle
 lessc less/style.less style.css
 
-chown -R www-data:www-data /var/www/html/wp-content
+chown -R www-data:www-data /var/www/html/wp-content/{plugins,uploads,cache,temp}
