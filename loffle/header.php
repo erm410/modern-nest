@@ -53,7 +53,7 @@
 	<?php fora_social_buttons(); ?>
 </div>
 <div class="hello-bar">
-	Psst... Hey you.<script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script> <a href="" data-leadbox-popup="1401bda73f72a2:152575834946dc">Click here to subscribe</a>
+	Psst... Hey you. <script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script> <button data-leadbox-popup="1401bda73f72a2:152575834946dc" style="background: rgb(153, 181, 152);border-color: rgb(153, 181, 152);border-radius: 20px;color: #FFFFFF;display: inline-block;vertical-align: middle;padding: 16px 32px;min-width: 192px;border: 1px solid rgb(153, 181, 152);font-size: 1rem;font-family: Helvetica, Arial, sans-serif;text-align: center;outline: 0;line-height: 1;cursor: pointer;-webkit-transition: background 0.3s, color 0.3s, border 0.3s;transition: background 0.3s, color 0.3s, border 0.3s;  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);">Click here to subscribe</button>
 </div>
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
