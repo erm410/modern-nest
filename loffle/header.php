@@ -52,6 +52,9 @@
 <div class="site-social site-social-fixed">
 	<?php fora_social_buttons(); ?>
 </div>
+<div class="hello-bar">
+	Psst... Want freebies? <script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script> <button data-leadbox-popup="1401bda73f72a2:152575834946dc" >GET THEM HERE!</button>
+</div>
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
