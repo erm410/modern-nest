@@ -28,10 +28,10 @@ cp nginx/common /etc/nginx/common.conf
 mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi}
 
 find /var/www/html/* -maxdepth 0 -not -name 'wp-config.php' -not -name 'wp-content' -print0 | xargs -0 rm -rf --
-[ -z "$2" ] || rm -rf /var/www/html/wp-content/themes/{loffle,fora}
+rm -rf /var/www/html/wp-content/themes/{loffle,fora}
 
 cp -r wp/* /var/www/html
-[ -z "$2" ] || cp -r fora loffle /var/www/html/wp-content/themes
+cp -r fora loffle /var/www/html/wp-content/themes
 
 cd /var/www/html/wp-content/themes/loffle
 lessc less/style.less style.css
