@@ -27,8 +27,6 @@ http {
 
     #gzip  on;
 
-		include conf.d/*;
-
 		fastcgi_cache_path /var/www/html/wp-content/cache/nginx levels=1:2 keys_zone=WORDPRESS:10m inactive=1d max_size=100m;
 		fastcgi_cache_key "$scheme$request_method$host$request_uri";
 		fastcgi_cache_use_stale updating error timeout invalid_header http_500;
