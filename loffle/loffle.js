@@ -29,7 +29,9 @@
 			$(".search-form").toggleClass("active");
 		});
 
-		$(".category-toggle").click(function() {
+		var $categoryToggle = $(".category-toggle");
+
+		$categoryToggle.click(function() {
 			var toggle = $(this);
 			toggle.toggleClass("active");
 			if (toggle.hasClass("active")) {
@@ -38,6 +40,23 @@
 				toggle.attr("aria-expanded", "false");
 			}
 			$(".category-images").toggleClass("active");
+		});
+
+		var $window = $(window);
+		$window.scroll(function() {
+
+			var $masthead = $("#masthead");
+			var mastheadBottom = $masthead.offset().top + $masthead.height();
+			var $nav = $("#site-navigation");
+			navBottom = $nav.offset().top + $nav.height();
+			if (navBottom >= mastheadBottom) {
+				$categoryToggle.css("position", "fixed");
+				$categoryToggle.css("top", navBottom - $window.scrollTop());
+			} else {
+				$categoryToggle.css("position", "static");
+				$categoryToggle.css("top", 0);
+			}
+
 		});
 
 		function clearContactForm() {
