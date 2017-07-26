@@ -131,6 +131,7 @@
 	<?php
 	if (is_home()) {
 	?>
+	<button class="category-toggle" aria-controls="categories" aria-expanded="false">Categories<i class="fa fa-bars spaceLeftRight"></i></button>
 	<div class="category-images">
 		<a href="/archives/category/diy-and-decorating" >
 			<div>

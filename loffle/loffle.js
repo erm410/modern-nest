@@ -29,6 +29,17 @@
 			$(".search-form").toggleClass("active");
 		});
 
+		$(".category-toggle").click(function() {
+			var toggle = $(this);
+			toggle.toggleClass("active");
+			if (toggle.hasClass("active")) {
+				toggle.attr("aria-expanded", "true");
+			} else {
+				toggle.attr("aria-expanded", "false");
+			}
+			$(".category-images").toggleClass("active");
+		});
+
 		function clearContactForm() {
 			$(".contact-form input:not([type='hidden'])").val("");
 			$(".contact-form textarea").val("");

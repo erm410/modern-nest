@@ -30,8 +30,39 @@
 		padding: 0 30px;
 	}
 
+	.category-toggle {
+		display: block;
+		text-align: center;
+		width: 100%;
+		border-radius: 0;
+
+		&:focus {
+			.accent-background;
+			outline-style: none;
+			color: white;
+			border-color: @accent;
+		}
+
+		&:active {
+			.accent-background;
+			color: white;
+			border-color: @accent;
+		}
+
+		&:hover {
+			.accent-background;
+			color: white;
+			border-color: @accent;
+		}
+	}
+
 	.category-images {
 		padding: 10px 0;
+		display: none;
+
+		&.active {
+			display: block;
+		}
 	}
 }
 
