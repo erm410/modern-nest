@@ -35,7 +35,7 @@
 		text-align: center;
 		width: 100%;
 		border-radius: 0;
-		.on-top;
+		z-index: 9998;
 
 		&:focus {
 			.accent-background;
@@ -54,6 +54,26 @@
 			.accent-background;
 			color: white;
 			border-color: @accent;
+		}
+	}
+
+	ul.nav-menu.category-menu {
+		margin-left: 0;
+		list-style: none;
+		width: 300px;
+		position: relative;
+		z-index: 9998;
+
+		li {
+			padding: 0;
+		}
+
+		&.toggled {
+			display: block;
+		}
+
+		a {
+			padding: 0.5em 1.5em;
 		}
 	}
 

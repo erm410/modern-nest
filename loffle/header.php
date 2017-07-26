@@ -131,7 +131,15 @@
 	<?php
 	if (is_home()) {
 	?>
-	<button class="category-toggle" aria-controls="categories" aria-expanded="false">Categories<i class="fa fa-bars spaceLeftRight"></i></button>
+	<button class="category-toggle" aria-controls="categories" aria-expanded="false"><i class="fa fa-bars spaceLeftRight"></i></button>
+	<ul class="nav-menu category-menu">
+		<li><a href="/archives/category/diy-and-decorating">DIY</a></li>
+		<li><a href="/archives/category/organization">Organization</a></li>
+		<li><a href="/archives/category/cleaning-and-laundry">Cleaning and Laundry</a></li>
+		<li><a href="/archives/category/parenting">Parenting</a></li>
+		<li><a href="/archives/category/cleaning-and-laundry">Healthy Living</a></li>
+		<li><a href="/archives/category/cooking-and-meal-planning">Cooking and Meal Planning</a></li>
+	</ul>
 	<div class="category-images">
 		<a href="/archives/category/diy-and-decorating" >
 			<div>
