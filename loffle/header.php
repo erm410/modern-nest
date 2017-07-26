@@ -56,7 +56,7 @@
 	Psst... Want freebies? <script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script> <button data-leadbox-popup="1401bda73f72a2:152575834946dc" >GET THEM HERE!</button>
 </div>
 <nav id="site-navigation" class="main-navigation" role="navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'fora' ); ?><i class="fa fa-bars spaceLeftRight"></i></button>
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars spaceLeftRight"></i></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 	<button class="search-toggle" aria-expanded="false"><i class="fa fa-search"></i></button>
 </nav><!-- #site-navigation -->
@@ -131,8 +131,8 @@
 	<?php
 	if (is_home()) {
 	?>
-	<button class="category-toggle" aria-controls="categories" aria-expanded="false"><i class="fa fa-bars spaceLeftRight"></i></button>
-	<ul class="nav-menu category-menu">
+	<button class="category-toggle" aria-controls="category-menu" aria-expanded="false"><i class="fa fa-bars spaceLeftRight"></i></button>
+	<ul id="category-menu" class="nav-menu category-menu">
 		<li><a href="/archives/category/diy-and-decorating">DIY</a></li>
 		<li><a href="/archives/category/organization">Organization</a></li>
 		<li><a href="/archives/category/cleaning-and-laundry">Cleaning and Laundry</a></li>
