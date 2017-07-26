@@ -29,6 +29,42 @@
 			$(".search-form").toggleClass("active");
 		});
 
+		var $categoryToggle = $(".category-toggle");
+
+		$categoryToggle.click(function() {
+			var toggle = $(this);
+			toggle.toggleClass("active");
+			if (toggle.hasClass("active")) {
+				toggle.attr("aria-expanded", "true");
+			} else {
+				toggle.attr("aria-expanded", "false");
+			}
+			$(".category-menu").toggleClass("toggled");
+		});
+
+		var $window = $(window);
+		$window.scroll(function() {
+
+			var $masthead = $("#masthead");
+			var mastheadBottom = $masthead.offset().top + $masthead.outerHeight();
+			var $nav = $("#site-navigation");
+			navBottom = $nav.offset().top + $nav.outerHeight();
+			var $categoryMenu = $(".category-menu");
+			if (navBottom >= mastheadBottom) {
+				var fixTop = navBottom - $window.scrollTop();
+				$categoryToggle.css("position", "fixed");
+				$categoryToggle.css("top", fixTop);
+				$categoryMenu.css("position", "fixed");
+				$categoryMenu.css("top", fixTop + $categoryToggle.outerHeight());
+			} else {
+				$categoryToggle.css("position", "static");
+				$categoryToggle.css("top", 0);
+				$categoryMenu.css("position", "absolute");
+				$categoryMenu.css("top", $masthead.outerHeight() + $categoryToggle.outerHeight());
+			}
+
+		});
+
 		function clearContactForm() {
 			$(".contact-form input:not([type='hidden'])").val("");
 			$(".contact-form textarea").val("");
