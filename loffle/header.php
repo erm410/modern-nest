@@ -128,9 +128,6 @@
 			</div>
 		</div>
 	<?php endif; ?>
-	<?php
-	if (is_home()) {
-	?>
 	<button class="category-toggle" aria-controls="category-menu" aria-expanded="false"><i class="fa fa-bars spaceLeftRight"></i></button>
 	<ul id="category-menu" class="nav-menu category-menu">
 		<li><a href="/archives/category/diy-and-decorating">DIY</a></li>
@@ -184,9 +181,6 @@
 			</div>
 		</a>
 	</div>
-	<?php
-	}
-	?>
 
 	<div id="content" class="site-content">
 		<div class="clear">
