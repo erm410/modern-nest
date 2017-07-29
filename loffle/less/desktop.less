@@ -359,18 +359,34 @@ margin: 10px;
 }
 
 .cta {
-	.accent-background;
+	background-color: #e6e6e6;
 	text-align: center;
-	color: white;
 	padding: 10px;
+	color: black;
+
+	h3 {
+		font-size: 1.3em;
+	}
+
+	hr {
+		width: 45px;
+		margin: 30px auto;
+		border-color: @accent;
+		border-top-width: 4px;
+	}
+
+	p {
+		font-size: 1.1em;
+	}
 
 	button {
 		.button-hover;
-		background-color: @green;
+		color: white;
+		background-color: @accent;
 		font-family: 'Champagne';
 		letter-spacing: 2px;
 		font-weight: bold;
-		font-size: 1.2em;
+		font-size: 1em;
 
 		-webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
