@@ -24,6 +24,10 @@ if ($http_cookie ~* "wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpres
 	set $skip_cache 1;
 }
 
+if ( $cookie_woocommerce_items_in_cart != "0" ) {	
+	set $skip_cache 1;
+}
+
 if ($request_method = "POST") {
 	set $skip_cache 1;
 }
