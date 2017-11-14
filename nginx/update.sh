@@ -28,12 +28,9 @@ cp nginx/common /etc/nginx/common.conf
 mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi}
 
 find /var/www/html/* -maxdepth 0 -not -name 'wp-config.php' -not -name 'wp-content' -print0 | xargs -0 rm -rf --
-rm -rf /var/www/html/wp-content/themes/{loffle,fora}
 
 cp -r wp/* /var/www/html
-cp -r fora loffle /var/www/html/wp-content/themes
+rsync -av --delete themes/ /var/www/html/wp-content/themes/
+rsync -av --delete serverPlugins/ /var/www/html/wp-content/plugins/
 
-cd /var/www/html/wp-content/themes/loffle
-lessc less/style.less style.css
-
-chown -R www-data:www-data /var/www/html/wp-content/{plugins,uploads,cache,temp}
+chown -R www-data:www-data /var/www/html/wp-content/{uploads,cache,temp}

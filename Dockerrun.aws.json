@@ -7,8 +7,16 @@
   ],
   "Volumes": [
 		{
-      "HostDirectory": "/mnt/wp/html/wp-content",
-      "ContainerDirectory": "/var/www/html/wp-content"
+      "HostDirectory": "/mnt/wp/html/wp-content/uploads",
+      "ContainerDirectory": "/var/www/html/wp-content/uploads"
+    },
+    {
+      "HostDirectory": "/mnt/wp/html/wp-content/cache",
+      "ContainerDirectory": "/var/www/html/wp-content/cache"
+    },
+    {
+      "HostDirectory": "/mnt/wp/html/wp-content/temp",
+      "ContainerDirectory": "/var/www/html/wp-content/temp"
     },
     {
       "HostDirectory": "/mnt/wp/html/wp-config.php",
