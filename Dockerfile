@@ -1,8 +1,5 @@
 FROM php:7.1-fpm
 
-COPY nginx/entrypoint /entrypoint
-COPY nginx/update.sh /update.sh
-
 ADD http://nginx.org/keys/nginx_signing.key /nginx.key
 
 RUN apt-key add /nginx.key \
@@ -18,6 +15,9 @@ RUN apt-key add /nginx.key \
 	&& ./newrelic-install install \
 	&& pear install --alldeps mail \
 	&& chmod +x /entrypoint
+
+COPY nginx/entrypoint /entrypoint
+COPY nginx/update.sh /update.sh
 
 EXPOSE 80
 

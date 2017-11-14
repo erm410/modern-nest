@@ -25,7 +25,7 @@ cp newrelic.ini opcache.ini /usr/local/etc/php/conf.d
 cp nginx/conf /etc/nginx/nginx.conf
 cp nginx/common /etc/nginx/common.conf
 
-mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi}
+mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi,uploads}
 
 find /var/www/html/* -maxdepth 0 -not -name 'wp-config.php' -not -name 'wp-content' -print0 | xargs -0 rm -rf --
 
