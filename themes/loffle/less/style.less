@@ -1,0 +1,66 @@
+/*!
+ Theme Name:		 Loffle
+ Theme URI:			https://www.example.com/
+ Description:		Custom theme for my lofflebear
+ Author:				 Ted Mitchell
+ Author URI:		 https://www.example.com
+ Template:			 fora
+ Version:				1.0.0
+*/
+
+@accent: #574c6d;
+@text-color: #666666;
+@background: #f7f7f7;
+@green: #99b698;
+
+@import "../fora/style.css";
+
+@font-face {
+	font-family: 'Champagne';
+	src: url('/wp-content/themes/loffle/fonts/Champagne & Limousines.ttf')
+}
+
+.accent-background() {
+	background-color: @accent;
+}
+
+.default-background() {
+	background-color: @background;
+}
+
+.accent-text() {
+	color: @accent;
+}
+
+.default-text-color() {
+	color: @text-color
+}
+
+.button-hover() {
+
+	&:hover {
+		color: @green;
+		border-color: @green;
+		.default-background;
+	}
+}
+
+.on-top() {
+	z-index: 9999;
+}
+
+.between-gutters() {
+	left: 0;
+	right: 0;
+}
+
+.full-width() {
+	left: 0;
+	right: 0;
+}
+
+@import "./general.less";
+@import "./desktop.less";
+@import "./1024.less";
+@import "./767.less";
+@import "./559.less";

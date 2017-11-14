@@ -1,0 +1,33 @@
+/*abm_admin*/
+@import url("global.css");
+
+#adm_ad_settings{
+	border: 1px dashed #0074a2;
+	padding: 1%;
+}
+
+#adm_ad_settings #adm_adsrow, #adm_ad_settings #adm_adsrow  #label, #adm_ad_settings #adm_adsrow  #AdtxtBox{
+	width: 100%;
+	display: block;
+	height: auto;
+}
+#adm_ad_settings #adm_adsrow  #AdtxtBox textarea{
+	width: 95%;
+	height: 200px;
+	overflow: auto;
+	padding: 2px 6px;
+	line-height: 1.4;
+	height: 100px;
+}
+
+#adm_ad_settings #adm_adsrow  #AdtxtBox input[type="text"]{
+	width: 95%;
+	overflow: auto;
+	padding: 2px 6px;
+	line-height: 1.4;
+}
+
+#advertisment_abm
+{
+font-size: 10px;
+}
