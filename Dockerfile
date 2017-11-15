@@ -2,6 +2,8 @@ FROM php:7.1-fpm
 
 ADD http://nginx.org/keys/nginx_signing.key /nginx.key
 
+COPY nginx/entrypoint /entrypoint
+
 RUN apt-key add /nginx.key \
 	&& echo deb http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
 	&& echo deb-src http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
@@ -16,7 +18,6 @@ RUN apt-key add /nginx.key \
 	&& pear install --alldeps mail \
 	&& chmod +x /entrypoint
 
-COPY nginx/entrypoint /entrypoint
 COPY nginx/update.sh /update.sh
 
 EXPOSE 80
