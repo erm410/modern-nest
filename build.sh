@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-zip homesyn Dockerfile Dockerrun.aws.json nginx/entrypoint nginx/update.sh .ebextensions
+zip -r homesyn Dockerfile Dockerrun.aws.json nginx/entrypoint nginx/update.sh .ebextensions

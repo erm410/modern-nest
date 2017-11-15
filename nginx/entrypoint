@@ -1,7 +1,7 @@
 #!/bin/bash
 
-/update.sh $@
+/update.sh
 
 nginx
 
-exec php-fpm
+exec $@
