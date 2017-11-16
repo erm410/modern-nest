@@ -25,7 +25,7 @@ cp newrelic.ini opcache.ini /usr/local/etc/php/conf.d
 cp nginx/conf /etc/nginx/nginx.conf
 cp nginx/common /etc/nginx/common.conf
 
-mkdir -p /var/www/html/wp-content/{themes,plugins,cache/nginx,temp/fcgi,uploads}
+mkdir -p /var/www/html/wp-content/{themes,plugins,uploads} /var/cache/nginx /tmp/fcgi
 
 find /var/www/html/* -maxdepth 0 -not -name 'wp-config.php' -not -name 'wp-content' -print0 | xargs -0 rm -rf --
 
@@ -33,4 +33,6 @@ cp -r wp/* /var/www/html
 rsync -av --delete themes/ /var/www/html/wp-content/themes/
 rsync -av --delete serverPlugins/ /var/www/html/wp-content/plugins/
 
-chown -R www-data:www-data /var/www/html/wp-content/{uploads,cache,temp}
+chown www-data:www-data /var/www/html/wp-content/uploads
+chown www-data:www-data /var/cache/nginx
+chown www-data:www-data /tmp/fcgi
