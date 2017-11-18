@@ -59,6 +59,8 @@ location ~* \.php$ {
 	fastcgi_cache WORDPRESS;
 	fastcgi_cache_lock on;
 	fastcgi_cache_valid 200 15m;
+
+	fastcgi_read_timeout 600;
 }
 
 location ~ \.(css|htc|less|js|js2|js3|js4)$ {
