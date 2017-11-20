@@ -1,13 +1,8 @@
-FROM php:7.1-fpm
-
-ADD http://nginx.org/keys/nginx_signing.key /nginx.key
+FROM erm410/php-ngx-pagespeed:7.1-fpm
 
 COPY nginx/entrypoint /entrypoint
 
-RUN apt-key add /nginx.key \
-	&& echo deb http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
-	&& echo deb-src http://nginx.org/packages/debian/ jessie nginx >> /etc/apt/sources.list \
-	&& apt-get update && apt-get install -y nginx git node-less libpng-dev libjpeg62-turbo-dev \
+RUN apt-get update && apt-get install -y git node-less libpng-dev libjpeg62-turbo-dev \
 	&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include \
 	&& docker-php-ext-install -j`nproc` mysqli gd opcache \
 	&& cd /opt \
