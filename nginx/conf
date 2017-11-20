@@ -71,6 +71,7 @@ http {
 
             include common.conf;
 
+            pagespeed on;
             pagespeed FileCachePath /tmp;
         }
 
