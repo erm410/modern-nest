@@ -72,8 +72,6 @@ http {
             server_name localhost;
 
             include common.conf;
-
-            FileCachePath /tmp;
         }
 
 }
