@@ -74,6 +74,11 @@ http {
             pagespeed on;
             pagespeed FileCachePath /tmp;
             pagespeed EnableFilters prioritize_critical_css;
+
+            pagespeed Domain localhost;
+            pagespeed Domain *.bootstrapcdn.com;
+            pagespeed Domain fonts.googleapis.com;
+            pagespeed Domain code.ionicframework.com;
         }
 
 }
