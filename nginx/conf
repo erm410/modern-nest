@@ -73,7 +73,7 @@ http {
 
             pagespeed on;
             pagespeed FileCachePath /tmp;
-            pagespeed EnableFilters inline_css;
+            pagespeed EnableFilters prioritize_critical_css;
         }
 
 }
