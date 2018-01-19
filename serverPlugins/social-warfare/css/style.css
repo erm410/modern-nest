@@ -88,6 +88,10 @@ div.nc_socialPanel:not(.nc_socialPanelSide) .nc_tweetContainer {
 	flex-flow: row wrap;
 }
 
+.nc_socialPanel:not(.nc_floater):not(.nc_socialPanelSide).swp_shift {
+ 	padding:0 10px;
+}
+
 .nc_socialPanel:not(.nc_socialPanelSide) .nc_tweetContainer:nth-child(1) {
 	margin-left: 0;
 }
@@ -287,8 +291,8 @@ span.swp_label {
 }
 
 .nc_socialPanel.swp_leaf .nc_tweetContainer {
-	-webkit-border-radius: 15px 0;
-	border-radius: 15px 0;
+	-webkit-border-radius: 15px 0!important;
+	border-radius: 15px 0!important;
 	border-width: 1px;
 }
 
@@ -1169,6 +1173,7 @@ body .nc_socialPanel.swp_o_colorOutlines:hover .swp_flipboard {
 	font-style: normal;
 	font-weight: normal;
 	text-rendering: auto;
+	text-transform: none!important;
 	-ms-transform: translate(0, 0);
 	-webkit-transform: translate(0, 0);
 	transform: translate(0, 0);
@@ -1487,7 +1492,7 @@ div.sw-pinit a.sw-pinit-button:visited {
 	height: 32px;
 	line-height: 32px;
 	opacity: 0;
-	padding: 0 30px;
+	padding: 0 20px;
 	position: absolute;
 	text-decoration: none;
 	text-decoration: none;
@@ -1738,10 +1743,6 @@ div.nc_socialPanel .nc_tweetContainer.swp_emphasize {
 	flex: 2;
 }
 
-div.nc_socialPanel .nc_tweetContainer.swp_whatsapp:not(.mobile) {
-	display: none;
-}
-
 .sw-pinit.aligncenter {
 	margin: 0 auto;
 }
@@ -1759,4 +1760,7 @@ div.nc_socialPanel .nc_tweetContainer.swp_whatsapp:not(.mobile) {
 	position: absolute;
 	top: 0;
 	width: 0;
+}
+.fl-module-content .uabb-blog-posts .uabb-post-thumbnail .sw-pinit.lazyloaded {
+	display: block !important;
 }
